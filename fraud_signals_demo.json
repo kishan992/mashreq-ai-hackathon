@@ -2,111 +2,642 @@
   {
     "id": 1,
     "platform": "X (synthetic)",
-    "text": "Received an SMS asking to verify my Mashreq account. Looks suspicious.",
+    "text": "Got an SMS saying my Mashreq account will be blocked unless I click a link. Feels like a scam?",
     "category_hint": "fraud",
     "sentiment": "negative",
-    "timestamp": "2026-02-01T08:10",
-    "sentiment_score": -2,
-    "risk_level": "HIGH",
-    "keywords_found": ["verify", "suspicious", "SMS"]
+    "timestamp": "2026-01-30T08:15"
   },
   {
     "id": 2,
     "platform": "Forum (synthetic)",
-    "text": "Mashreq support called me for OTP verification, is this real?",
+    "text": "Anyone else receiving fake Mashreq messages asking to verify account details?",
     "category_hint": "fraud",
-    "sentiment": "neutral",
-    "timestamp": "2026-02-01T08:35",
-    "sentiment_score": 0,
-    "risk_level": "MEDIUM",
-    "keywords_found": ["OTP", "verification", "support"]
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T08:40"
   },
   {
     "id": 3,
     "platform": "Instagram (synthetic)",
-    "text": "Warning: Do not click shortened Mashreq links. Likely phishing.",
+    "text": "Warning: I got a suspicious Mashreq SMS with a shortened link. Don’t click!",
     "category_hint": "fraud",
     "sentiment": "negative",
-    "timestamp": "2026-02-01T09:00",
-    "sentiment_score": -3,
-    "risk_level": "HIGH",
-    "keywords_found": ["phishing", "links", "warning"]
+    "timestamp": "2026-01-30T09:05"
   },
   {
     "id": 4,
     "platform": "X (synthetic)",
-    "text": "Saw a Mashreq WhatsApp message asking for personal info. Is this legit?",
+    "text": "Is Mashreq sending WhatsApp messages now? Got one asking to update my info.",
     "category_hint": "fraud",
     "sentiment": "neutral",
-    "timestamp": "2026-02-01T09:20",
-    "sentiment_score": 0,
-    "risk_level": "MEDIUM",
-    "keywords_found": ["WhatsApp", "personal info"]
+    "timestamp": "2026-01-30T09:20"
   },
   {
     "id": 5,
     "platform": "Forum (synthetic)",
-    "text": "Fake SMS telling me my Mashreq account will be blocked unless I click a link.",
+    "text": "Received a call claiming to be Mashreq support asking for OTP. Sounded suspicious.",
     "category_hint": "fraud",
     "sentiment": "negative",
-    "timestamp": "2026-02-01T09:45",
-    "sentiment_score": -3,
-    "risk_level": "HIGH",
-    "keywords_found": ["blocked", "link", "SMS"]
+    "timestamp": "2026-01-30T09:45"
   },
   {
     "id": 6,
-    "platform": "Instagram (synthetic)",
-    "text": "Public reminder: Mashreq never asks for OTPs via calls or messages.",
+    "platform": "X (synthetic)",
+    "text": "Multiple people in my office got fake Mashreq SMS alerts today.",
     "category_hint": "fraud",
-    "sentiment": "positive",
-    "timestamp": "2026-02-01T10:10",
-    "sentiment_score": 2,
-    "risk_level": "LOW",
-    "keywords_found": ["OTP", "reminder", "safety"]
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T10:00"
   },
   {
     "id": 7,
-    "platform": "X (synthetic)",
-    "text": "Multiple phishing messages pretending to be from Mashreq today.",
+    "platform": "Forum (synthetic)",
+    "text": "Are these ‘account suspension’ messages legit or a phishing attempt?",
     "category_hint": "fraud",
-    "sentiment": "negative",
-    "timestamp": "2026-02-01T10:35",
-    "sentiment_score": -2,
-    "risk_level": "HIGH",
-    "keywords_found": ["phishing", "messages"]
+    "sentiment": "neutral",
+    "timestamp": "2026-01-30T10:25"
   },
   {
     "id": 8,
-    "platform": "Forum (synthetic)",
-    "text": "Received an email claiming urgent action on my Mashreq account.",
+    "platform": "Instagram (synthetic)",
+    "text": "Scam alert: fake Mashreq link asking for card details.",
     "category_hint": "fraud",
-    "sentiment": "neutral",
-    "timestamp": "2026-02-01T11:00",
-    "sentiment_score": 0,
-    "risk_level": "MEDIUM",
-    "keywords_found": ["email", "urgent", "action"]
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T10:50"
   },
   {
     "id": 9,
-    "platform": "Instagram (synthetic)",
-    "text": "Saw posts warning about fake Mashreq links asking for card info.",
+    "platform": "X (synthetic)",
+    "text": "Why are there so many scam messages pretending to be Mashreq today?",
     "category_hint": "fraud",
     "sentiment": "negative",
-    "timestamp": "2026-02-01T11:25",
-    "sentiment_score": -2,
-    "risk_level": "HIGH",
-    "keywords_found": ["fake links", "card info", "warning"]
+    "timestamp": "2026-01-30T11:10"
   },
   {
     "id": 10,
+    "platform": "Forum (synthetic)",
+    "text": "Almost clicked a Mashreq SMS link before realizing it looked fake.",
+    "category_hint": "fraud",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T11:35"
+  },
+  {
+    "id": 11,
     "platform": "X (synthetic)",
-    "text": "Reminder: Mashreq never asks you to share OTPs publicly.",
+    "text": "Seeing reports of phishing scams using Mashreq’s name.",
+    "category_hint": "fraud",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T12:00"
+  },
+  {
+    "id": 12,
+    "platform": "Forum (synthetic)",
+    "text": "Got an email saying urgent action required on my Mashreq account. Is it real?",
+    "category_hint": "fraud",
+    "sentiment": "neutral",
+    "timestamp": "2026-01-30T12:20"
+  },
+  {
+    "id": 13,
+    "platform": "Instagram (synthetic)",
+    "text": "Public reminder: Mashreq never asks for OTPs over SMS or calls.",
     "category_hint": "fraud",
     "sentiment": "positive",
-    "timestamp": "2026-02-01T11:50",
-    "sentiment_score": 2,
-    "risk_level": "LOW",
-    "keywords_found": ["OTP", "reminder", "safety"]
+    "timestamp": "2026-01-30T12:45"
+  },
+
+  {
+    "id": 14,
+    "platform": "X (synthetic)",
+    "text": "Mashreq app not letting me log in since morning.",
+    "category_hint": "service",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T08:30"
+  },
+  {
+    "id": 15,
+    "platform": "Forum (synthetic)",
+    "text": "Anyone else facing delays in salary credit today?",
+    "category_hint": "service",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T09:00"
+  },
+  {
+    "id": 16,
+    "platform": "X (synthetic)",
+    "text": "Mashreq mobile app keeps timing out during login.",
+    "category_hint": "service",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T09:25"
+  },
+  {
+    "id": 17,
+    "platform": "Instagram (synthetic)",
+    "text": "Is Mashreq experiencing technical issues today?",
+    "category_hint": "service",
+    "sentiment": "neutral",
+    "timestamp": "2026-01-30T09:50"
+  },
+  {
+    "id": 18,
+    "platform": "Forum (synthetic)",
+    "text": "Unable to complete transfers via Mashreq app.",
+    "category_hint": "service",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T10:15"
+  },
+  {
+    "id": 19,
+    "platform": "X (synthetic)",
+    "text": "Login issues started after the latest Mashreq app update.",
+    "category_hint": "service",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T10:40"
+  },
+  {
+    "id": 20,
+    "platform": "Forum (synthetic)",
+    "text": "Card payment declined twice even though balance is sufficient.",
+    "category_hint": "service",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T11:05"
+  },
+  {
+    "id": 21,
+    "platform": "X (synthetic)",
+    "text": "Mashreq app seems slow today. Anyone else?",
+    "category_hint": "service",
+    "sentiment": "neutral",
+    "timestamp": "2026-01-30T11:30"
+  },
+  {
+    "id": 22,
+    "platform": "Instagram (synthetic)",
+    "text": "Having trouble accessing Mashreq online banking.",
+    "category_hint": "service",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T11:55"
+  },
+  {
+    "id": 23,
+    "platform": "Forum (synthetic)",
+    "text": "Transaction stuck in pending state for over an hour.",
+    "category_hint": "service",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T12:10"
+  },
+  {
+    "id": 24,
+    "platform": "X (synthetic)",
+    "text": "Hope Mashreq resolves the app issues soon.",
+    "category_hint": "service",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T12:30"
+  },
+  {
+    "id": 25,
+    "platform": "Forum (synthetic)",
+    "text": "Seems like a temporary outage? Things just started working again.",
+    "category_hint": "service",
+    "sentiment": "positive",
+    "timestamp": "2026-01-30T12:55"
+  },
+  {
+    "id": 26,
+    "platform": "Forum (synthetic)",
+    "text": "Hearing whispers that Mashreq might be acquiring a local crypto exchange soon. Anyone else heard this?",
+    "category_hint": "rumour",
+    "sentiment": "neutral",
+    "timestamp": "2026-01-30T13:15"
+  },
+  {
+    "id": 27,
+    "platform": "X (synthetic)",
+    "text": "Rumor has it Mashreq is planning to phase out physical debit cards entirely by Q4 2026. Digital only?",
+    "category_hint": "rumour",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T13:40"
+  },
+  {
+    "id": 28,
+    "platform": "WhatsApp (synthetic)",
+    "text": "Forwarded: Mashreq to launch 'Zero-Fee' international transfers for all Gold members starting Feb 1st. True?",
+    "category_hint": "rumour",
+    "sentiment": "positive",
+    "timestamp": "2026-01-30T14:05"
+  },
+  {
+    "id": 29,
+    "platform": "Forum (synthetic)",
+    "text": "Is it true that the new 'Agentic AI' feature will replace human support completely? That sounds risky.",
+    "category_hint": "rumour",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T14:30"
+  },
+  {
+    "id": 30,
+    "platform": "X (synthetic)",
+    "text": "Seeing chatter about a massive UI overhaul for the Mashreq app coming next week. Finally?",
+    "category_hint": "rumour",
+    "sentiment": "positive",
+    "timestamp": "2026-01-30T14:50"
+  },
+  {
+    "id": 31,
+    "platform": "Instagram (synthetic)",
+    "text": "Heard a rumour that Mashreq will start accepting Digital Dirham for loan repayments.",
+    "category_hint": "rumour",
+    "sentiment": "neutral",
+    "timestamp": "2026-01-30T15:10"
+  },
+  {
+    "id": 32,
+    "platform": "Forum (synthetic)",
+    "text": "My cousin at the bank says they are testing 'Palm Vein' scanners for ATMs. No more cards needed?",
+    "category_hint": "rumour",
+    "sentiment": "neutral",
+    "timestamp": "2026-01-30T15:35"
+  },
+  {
+    "id": 33,
+    "platform": "X (synthetic)",
+    "text": "Word on the street is Mashreq is merging with a European neobank to expand into the EU.",
+    "category_hint": "rumour",
+    "sentiment": "neutral",
+    "timestamp": "2026-01-30T16:00"
+  },
+  {
+    "id": 34,
+    "platform": "Forum (synthetic)",
+    "text": "Is Mashreq really going to charge for API access for third-party budgeting apps? That would suck.",
+    "category_hint": "rumour",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T16:20"
+  },
+  {
+    "id": 35,
+    "platform": "X (synthetic)",
+    "text": "Rumors of a data leak at a third-party vendor used by Mashreq. Hope it's fake news.",
+    "category_hint": "rumour",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T16:45"
+  },
+  {
+    "id": 36,
+    "platform": "Instagram (synthetic)",
+    "text": "They say Mashreq Neo accounts will get free Netflix subscriptions soon. Too good to be true?",
+    "category_hint": "rumour",
+    "sentiment": "positive",
+    "timestamp": "2026-01-30T17:10"
+  },
+  {
+    "id": 37,
+    "platform": "Forum (synthetic)",
+    "text": "Heard talk of a 'Mashreq Metaverse' branch opening where you can meet advisors in VR.",
+    "category_hint": "rumour",
+    "sentiment": "neutral",
+    "timestamp": "2026-01-30T17:30"
+  },
+  {
+    "id": 38,
+    "platform": "X (synthetic)",
+    "text": "Is the CEO stepping down? Saw some vague tweets about leadership changes.",
+    "category_hint": "rumour",
+    "sentiment": "neutral",
+    "timestamp": "2026-01-30T17:55"
+  },
+  {
+    "id": 39,
+    "platform": "Forum (synthetic)",
+    "text": "Rumour: Credit card limits are being slashed across the board for expats next month.",
+    "category_hint": "rumour",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T18:15"
+  },
+  {
+    "id": 40,
+    "platform": "WhatsApp (synthetic)",
+    "text": "Don't update the app! Rumour says the new version drains battery like crazy.",
+    "category_hint": "rumour",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T18:40"
+  },
+  {
+    "id": 41,
+    "platform": "X (synthetic)",
+    "text": "People saying Mashreq is launching a metal card for standard accounts. Big if true.",
+    "category_hint": "rumour",
+    "sentiment": "positive",
+    "timestamp": "2026-01-30T19:00"
+  },
+  {
+    "id": 42,
+    "platform": "Forum (synthetic)",
+    "text": "Are they really removing the SMS OTP option? I heard it's app-only authentication from March.",
+    "category_hint": "rumour",
+    "sentiment": "neutral",
+    "timestamp": "2026-01-30T19:25"
+  },
+  {
+    "id": 43,
+    "platform": "Instagram (synthetic)",
+    "text": "Rumour alert: 5% cashback on all EV charging payments coming to Mashreq cards.",
+    "category_hint": "rumour",
+    "sentiment": "positive",
+    "timestamp": "2026-01-30T19:45"
+  },
+  {
+    "id": 44,
+    "platform": "X (synthetic)",
+    "text": "Heard Mashreq might partner with Tesla for auto-financing directly in the app.",
+    "category_hint": "rumour",
+    "sentiment": "positive",
+    "timestamp": "2026-01-30T20:10"
+  },
+  {
+    "id": 45,
+    "platform": "Forum (synthetic)",
+    "text": "Is it true they are closing the downtown branch? Saw some moving trucks there.",
+    "category_hint": "rumour",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T20:30"
+  },
+  {
+    "id": 46,
+    "platform": "News Site (synthetic)",
+    "text": "CBUAE announces successful pilot of cross-border Digital Dirham transactions with India.",
+    "category_hint": "news_world",
+    "sentiment": "positive",
+    "timestamp": "2026-01-30T09:00"
+  },
+  {
+    "id": 47,
+    "platform": "News Site (synthetic)",
+    "text": "Global banking giant suffers massive cyberattack; SWIFT warns member banks to stay alert.",
+    "category_hint": "news_world",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T09:30"
+  },
+  {
+    "id": 48,
+    "platform": "X (synthetic)",
+    "text": "Fed Chair hints at another rate cut in March 2026 as inflation drops below 2%.",
+    "category_hint": "news_world",
+    "sentiment": "positive",
+    "timestamp": "2026-01-30T10:00"
+  },
+  {
+    "id": 49,
+    "platform": "News Site (synthetic)",
+    "text": "European Central Bank rolls out 'Digital Euro' for retail use across the EU today.",
+    "category_hint": "news_world",
+    "sentiment": "neutral",
+    "timestamp": "2026-01-30T10:30"
+  },
+  {
+    "id": 50,
+    "platform": "Forum (synthetic)",
+    "text": "Saudi banks report record profits for 2025 driven by non-oil sector growth.",
+    "category_hint": "news_world",
+    "sentiment": "positive",
+    "timestamp": "2026-01-30T11:00"
+  },
+  {
+    "id": 51,
+    "platform": "News Site (synthetic)",
+    "text": "JPMorgan CEO warns of 'Agentic AI' risks in global financial markets.",
+    "category_hint": "news_world",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T11:30"
+  },
+  {
+    "id": 52,
+    "platform": "X (synthetic)",
+    "text": "Breaking: UK introduces strict new laws for refunding victims of APP fraud.",
+    "category_hint": "news_world",
+    "sentiment": "positive",
+    "timestamp": "2026-01-30T12:00"
+  },
+  {
+    "id": 53,
+    "platform": "News Site (synthetic)",
+    "text": "Goldman Sachs predicts Brent crude to stabilize at $75 through 2026.",
+    "category_hint": "news_world",
+    "sentiment": "neutral",
+    "timestamp": "2026-01-30T12:30"
+  },
+  {
+    "id": 54,
+    "platform": "Forum (synthetic)",
+    "text": "IMF upgrades global growth forecast for 2026, citing resilient banking sectors.",
+    "category_hint": "news_world",
+    "sentiment": "positive",
+    "timestamp": "2026-01-30T13:00"
+  },
+  {
+    "id": 55,
+    "platform": "News Site (synthetic)",
+    "text": "HSBC completes sale of its German retail banking unit to Commerzbank.",
+    "category_hint": "news_world",
+    "sentiment": "neutral",
+    "timestamp": "2026-01-30T13:30"
+  },
+  {
+    "id": 56,
+    "platform": "X (synthetic)",
+    "text": "Bitcoin surges past $120k as more banks integrate crypto custody services.",
+    "category_hint": "news_world",
+    "sentiment": "positive",
+    "timestamp": "2026-01-30T14:00"
+  },
+  {
+    "id": 57,
+    "platform": "News Site (synthetic)",
+    "text": "Singapore regulator fines three banks for lapses in anti-money laundering controls.",
+    "category_hint": "news_world",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T14:30"
+  },
+  {
+    "id": 58,
+    "platform": "Forum (synthetic)",
+    "text": "Standard Chartered launches first 'Net Zero' credit card made entirely from recycled ocean plastic.",
+    "category_hint": "news_world",
+    "sentiment": "positive",
+    "timestamp": "2026-01-30T15:00"
+  },
+  {
+    "id": 59,
+    "platform": "News Site (synthetic)",
+    "text": "China's central bank expands digital yuan pilot to cross-border tourism.",
+    "category_hint": "news_world",
+    "sentiment": "neutral",
+    "timestamp": "2026-01-30T15:30"
+  },
+  {
+    "id": 60,
+    "platform": "X (synthetic)",
+    "text": "Apple and Goldman Sachs officially end their credit card partnership.",
+    "category_hint": "news_world",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T16:00"
+  },
+  {
+    "id": 61,
+    "platform": "News Site (synthetic)",
+    "text": "Visa introduces 'Palm Pay' biometric payments at 50,000 locations worldwide.",
+    "category_hint": "news_world",
+    "sentiment": "positive",
+    "timestamp": "2026-01-30T16:30"
+  },
+  {
+    "id": 62,
+    "platform": "Forum (synthetic)",
+    "text": "Report: AI-driven fraud cost global banks $50 billion in 2025.",
+    "category_hint": "news_world",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T17:00"
+  },
+  {
+    "id": 63,
+    "platform": "News Site (synthetic)",
+    "text": "Bank of America tests VR banking branches in the Metaverse.",
+    "category_hint": "news_world",
+    "sentiment": "neutral",
+    "timestamp": "2026-01-30T17:30"
+  },
+  {
+    "id": 64,
+    "platform": "X (synthetic)",
+    "text": "Turkey's central bank raises interest rates again to combat persistent inflation.",
+    "category_hint": "news_world",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T18:00"
+  },
+  {
+    "id": 65,
+    "platform": "News Site (synthetic)",
+    "text": "Major Australian bank suffers outage leaving millions without access to funds.",
+    "category_hint": "news_world",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T18:30"
+  },
+  {
+    "id": 66,
+    "platform": "WhatsApp (synthetic)",
+    "text": "Beware: Got a video call from 'Mashreq Support' but it was an AI deepfake. Scary stuff.",
+    "category_hint": "fraud",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T13:00"
+  },
+  {
+    "id": 67,
+    "platform": "X (synthetic)",
+    "text": "Fake email circulating about a 'mandatory EID update' for Mashreq. Link goes to a phishing site.",
+    "category_hint": "fraud",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T13:25"
+  },
+  {
+    "id": 68,
+    "platform": "Forum (synthetic)",
+    "text": "Scammers are using voice cloning now! My dad got a call that sounded exactly like me asking for money via Mashreq.",
+    "category_hint": "fraud",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T13:50"
+  },
+  {
+    "id": 69,
+    "platform": "Instagram (synthetic)",
+    "text": "Watch out for ads on Insta offering 'Mashreq crypto investment' returns. It's a ponzi scheme.",
+    "category_hint": "fraud",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T14:15"
+  },
+  {
+    "id": 70,
+    "platform": "X (synthetic)",
+    "text": "Received a suspicious SMS: 'Your Mashreq Neo account is locked.' I don't even have a Neo account.",
+    "category_hint": "fraud",
+    "sentiment": "neutral",
+    "timestamp": "2026-01-30T14:40"
+  },
+  {
+    "id": 71,
+    "platform": "Forum (synthetic)",
+    "text": "New fraud tactic: They send a small deposit to your Mashreq account then call claiming it was a mistake and ask for a refund.",
+    "category_hint": "fraud",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T15:05"
+  },
+  {
+    "id": 72,
+    "platform": "WhatsApp (synthetic)",
+    "text": "Alert: People are getting fake courier messages asking for a small fee using Mashreq cards to steal data.",
+    "category_hint": "fraud",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T15:30"
+  },
+  {
+    "id": 73,
+    "platform": "X (synthetic)",
+    "text": "Mashreq facial recognition login is failing repeatedly today. Please fix!",
+    "category_hint": "service",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T13:10"
+  },
+  {
+    "id": 74,
+    "platform": "Forum (synthetic)",
+    "text": "Why does the Mashreq app chat bot keep saying 'System Unavailable' when I ask about loans?",
+    "category_hint": "service",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T13:45"
+  },
+  {
+    "id": 75,
+    "platform": "Instagram (synthetic)",
+    "text": "Anyone else's Mashreq rewards points missing after the update?",
+    "category_hint": "service",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T14:20"
+  },
+  {
+    "id": 76,
+    "platform": "X (synthetic)",
+    "text": "Shoutout to Mashreq support for resolving my blocked card issue in 5 mins on a Friday!",
+    "category_hint": "service",
+    "sentiment": "positive",
+    "timestamp": "2026-01-30T15:00"
+  },
+  {
+    "id": 77,
+    "platform": "Forum (synthetic)",
+    "text": "ATM at City Centre swallowed my card. Customer service says 3 days to retrieve it.",
+    "category_hint": "service",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T15:40"
+  },
+  {
+    "id": 78,
+    "platform": "X (synthetic)",
+    "text": "Is the instant transfer feature down? My money hasn't reached the recipient.",
+    "category_hint": "service",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T16:15"
+  },
+  {
+    "id": 79,
+    "platform": "Forum (synthetic)",
+    "text": "Unable to download my e-statement from the Mashreq online portal. Button does nothing.",
+    "category_hint": "service",
+    "sentiment": "negative",
+    "timestamp": "2026-01-30T16:50"
+  },
+  {
+    "id": 80,
+    "platform": "Instagram (synthetic)",
+    "text": "Finally got through to an agent after 20 mins on hold. Call volume must be high.",
+    "category_hint": "service",
+    "sentiment": "neutral",
+    "timestamp": "2026-01-30T17:25"
   }
 ]

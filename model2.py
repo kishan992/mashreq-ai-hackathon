@@ -1,78 +1,136 @@
 import json
-from transformers import pipeline
+import warnings
+import logging
+from transformers import pipeline, logging as hf_logging
 
-# --- CONFIGURATION ---
-JSON_FILE_PATH = "fraud_signals_demo.json" # Make sure this matches your file name
-MODEL_NAME = "EleutherAI/gpt-neo-1.3B"
+# --- 1. CONFIGURATION & CLEANUP ---
+warnings.filterwarnings("ignore")
+hf_logging.set_verbosity_error()
+logging.getLogger("transformers").setLevel(logging.ERROR)
 
-def load_and_format_data(filepath):
+JSON_FILE = "fraud_signals_demo.json"
+MODEL_NAME = "EleutherAI/gpt-neo-1.3B" 
+# Note: On Mac M1/M2/M3, use device="mps" below for speed. On Windows, use device=-1 (CPU) or 0 (GPU).
+
+# --- 2. THE RISK ENGINE (Python Logic) ---
+def assign_risk_score(post):
     """
-    Reads the JSON and converts it into a text context the LLM can understand.
+    Categorizes a post into HIGH, MEDIUM, or LOW risk based on rules.
+    This fulfills the 'Deterministic Guardrails' requirement.
     """
+    text = post.get('text', '').lower()
+    category = post.get('category_hint', 'unknown')
+    
+    # RULE 1: Fraud is always HIGH risk
+    if category == 'fraud':
+        return "HIGH"
+    
+    # RULE 2: Service issues with negative sentiment are MEDIUM
+    if category == 'service' and post.get('sentiment') == 'negative':
+        return "MEDIUM"
+        
+    # RULE 3: Rumors about security/data are HIGH
+    if category == 'rumour' and any(x in text for x in ['leak', 'hack', 'breach', 'security']):
+        return "HIGH"
+
+    # Default to LOW (Noise/General Sentiment)
+    return "LOW"
+
+def load_and_analyze_data(filepath):
     try:
         with open(filepath, 'r') as f:
             data = json.load(f)
     except FileNotFoundError:
-        print("Error: JSON file not found.")
-        return ""
+        return "System Error: Database not found."
 
-    # Convert JSON list to a clean text block for the AI
-    context_text = "Here is a dataset of recent social media posts regarding Mashreq Bank:\n\n"
-    for item in data:
-        context_text += (
-            f"- Post ID {item['id']} on {item['platform']}: "
-            f"\"{item['text']}\" "
-            f"(Risk: {item['risk_level']}, Category: {item.get('category_hint', 'Unknown')})\n"
-        )
-    return context_text
+    # --- AUTOMATIC CATEGORIZATION ---
+    # We loop through all 80 posts and tag them
+    risk_counts = {"HIGH": 0, "MEDIUM": 0, "LOW": 0}
+    high_risk_posts = []
+
+    for post in data:
+        # 1. Assign Risk
+        risk_level = assign_risk_score(post)
+        
+        # 2. Count it
+        risk_counts[risk_level] += 1
+        
+        # 3. Save High Risk items for the AI to read
+        if risk_level == "HIGH":
+            high_risk_posts.append(f"- [{post['platform']}] {post['text']}")
+
+    # --- BUILD THE 'BRAIN' CONTEXT ---
+    # This string is what the AI 'sees' before it answers you.
+    context = (
+        f"EXECUTIVE RISK DASHBOARD:\n"
+        f"--------------------------------\n"
+        f"TOTAL SIGNALS SCANNED: {len(data)}\n"
+        f"🔴 HIGH RISK (Fraud/Security): {risk_counts['HIGH']}\n"
+        f"🟠 MEDIUM RISK (Service Ops): {risk_counts['MEDIUM']}\n"
+        f"🟢 LOW RISK (General Chatter): {risk_counts['LOW']}\n"
+        f"--------------------------------\n\n"
+        f"LATEST HIGH PRIORITY ALERTS:\n"
+    )
+    
+    # Add the last 5 high risk posts as evidence
+    for log in high_risk_posts[-5:]:
+        context += f"{log}\n"
+    
+    return context
 
 def main():
-    print(f"Loading {MODEL_NAME}... (This may take a few minutes the first time)")
-    # We use a text-generation pipeline. 
-    # device=-1 runs on CPU. Change to device=0 if you have a GPU (requires CUDA).
+    print(f"🔄 Booting Risk Engine & AI Model... ")
+    
+    # Load Model
+    # CHANGE device="mps" if you are on Mac M1/M2. Keep device=-1 for Windows CPU.
     generator = pipeline('text-generation', model=MODEL_NAME, device=-1) 
-    
-    # Load the "Brain" (Context)
-    context_data = load_and_format_data(JSON_FILE_PATH)
-    
-    if not context_data:
-        return
 
-    print("\n" + "="*40)
-    print("✅ MODEL LOADED. AI IS READY.")
-    print("Ask questions like: 'What are the main fraud threats?' or 'Summarize the risks.'")
-    print("Type 'exit' to quit.")
-    print("="*40 + "\n")
+    print("\n" + "="*50)
+    print("✅ MASHREQ AI SENTINEL: ONLINE")
+    print("   Risk Categorization Module: ACTIVE")
+    print("="*50 + "\n")
+
+    # Load data and run the risk engine
+    context_data = load_and_analyze_data(JSON_FILE)
+    
+    # Show the stats to the user immediately (Good for the Demo!)
+    print(context_data) 
 
     while True:
-        user_question = input("You: ")
-        if user_question.lower() in ['exit', 'quit']:
+        try:
+            user_input = input("Analyst > ")
+            if user_input.lower() in ['exit', 'quit']:
+                break
+            
+            # Construct Prompt
+            prompt = (
+                f"{context_data}\n"
+                f"Analyst Question: {user_input}\n"
+                f"Executive Answer:"
+            )
+
+            print("Thinking...", end="\r")
+            
+            output = generator(
+                prompt, 
+                max_new_tokens=80,
+                do_sample=True, 
+                temperature=0.5,
+                repetition_penalty=1.2,
+                pad_token_id=50256,
+                truncation=True
+            )
+
+            full_text = output[0]['generated_text']
+            answer = full_text.split("Executive Answer:")[-1].strip()
+            
+            if "Analyst Question" in answer:
+                answer = answer.split("Analyst Question")[0]
+
+            print(f"AI > {answer}\n")
+
+        except KeyboardInterrupt:
             break
 
-        # --- CONSTRUCT THE PROMPT ---
-        # We sandwich the data and the question so the model answers based on the file.
-        prompt = (
-            f"{context_data}\n"
-            f"Question: Based on the dataset above, {user_question}\n"
-            f"Answer:"
-        )
-
-        # Generate response
-        # max_new_tokens controls how long the answer is.
-        # do_sample=True allows for more natural/creative phrasing.
-        output = generator(
-            prompt, 
-            max_new_tokens=100, 
-            do_sample=True, 
-            temperature=0.7,
-            pad_token_id=50256
-        )
-
-        # Clean up the output to show only the answer
-        full_text = output[0]['generated_text']
-        answer = full_text.split("Answer:")[-1].strip()
-
-        print(f"AI: {answer}\n")
-
 if __name__ == "__main__":
-    main()
+    main()``
