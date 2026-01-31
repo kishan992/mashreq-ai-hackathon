@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "platform": "X (synthetic)",
+    "text": "Received an SMS asking to verify my Mashreq account. Looks suspicious.",
+    "category_hint": "fraud",
+    "sentiment": "negative",
+    "timestamp": "2026-02-01T08:10",
+    "sentiment_score": -2,
+    "risk_level": "HIGH",
+    "keywords_found": ["verify", "suspicious", "SMS"]
+  },
+  {
+    "id": 2,
+    "platform": "Forum (synthetic)",
+    "text": "Mashreq support called me for OTP verification, is this real?",
+    "category_hint": "fraud",
+    "sentiment": "neutral",
+    "timestamp": "2026-02-01T08:35",
+    "sentiment_score": 0,
+    "risk_level": "MEDIUM",
+    "keywords_found": ["OTP", "verification", "support"]
+  },
+  {
+    "id": 3,
+    "platform": "Instagram (synthetic)",
+    "text": "Warning: Do not click shortened Mashreq links. Likely phishing.",
+    "category_hint": "fraud",
+    "sentiment": "negative",
+    "timestamp": "2026-02-01T09:00",
+    "sentiment_score": -3,
+    "risk_level": "HIGH",
+    "keywords_found": ["phishing", "links", "warning"]
+  },
+  {
+    "id": 4,
+    "platform": "X (synthetic)",
+    "text": "Saw a Mashreq WhatsApp message asking for personal info. Is this legit?",
+    "category_hint": "fraud",
+    "sentiment": "neutral",
+    "timestamp": "2026-02-01T09:20",
+    "sentiment_score": 0,
+    "risk_level": "MEDIUM",
+    "keywords_found": ["WhatsApp", "personal info"]
+  },
+  {
+    "id": 5,
+    "platform": "Forum (synthetic)",
+    "text": "Fake SMS telling me my Mashreq account will be blocked unless I click a link.",
+    "category_hint": "fraud",
+    "sentiment": "negative",
+    "timestamp": "2026-02-01T09:45",
+    "sentiment_score": -3,
+    "risk_level": "HIGH",
+    "keywords_found": ["blocked", "link", "SMS"]
+  },
+  {
+    "id": 6,
+    "platform": "Instagram (synthetic)",
+    "text": "Public reminder: Mashreq never asks for OTPs via calls or messages.",
+    "category_hint": "fraud",
+    "sentiment": "positive",
+    "timestamp": "2026-02-01T10:10",
+    "sentiment_score": 2,
+    "risk_level": "LOW",
+    "keywords_found": ["OTP", "reminder", "safety"]
+  },
+  {
+    "id": 7,
+    "platform": "X (synthetic)",
+    "text": "Multiple phishing messages pretending to be from Mashreq today.",
+    "category_hint": "fraud",
+    "sentiment": "negative",
+    "timestamp": "2026-02-01T10:35",
+    "sentiment_score": -2,
+    "risk_level": "HIGH",
+    "keywords_found": ["phishing", "messages"]
+  },
+  {
+    "id": 8,
+    "platform": "Forum (synthetic)",
+    "text": "Received an email claiming urgent action on my Mashreq account.",
+    "category_hint": "fraud",
+    "sentiment": "neutral",
+    "timestamp": "2026-02-01T11:00",
+    "sentiment_score": 0,
+    "risk_level": "MEDIUM",
+    "keywords_found": ["email", "urgent", "action"]
+  },
+  {
+    "id": 9,
+    "platform": "Instagram (synthetic)",
+    "text": "Saw posts warning about fake Mashreq links asking for card info.",
+    "category_hint": "fraud",
+    "sentiment": "negative",
+    "timestamp": "2026-02-01T11:25",
+    "sentiment_score": -2,
+    "risk_level": "HIGH",
+    "keywords_found": ["fake links", "card info", "warning"]
+  },
+  {
+    "id": 10,
+    "platform": "X (synthetic)",
+    "text": "Reminder: Mashreq never asks you to share OTPs publicly.",
+    "category_hint": "fraud",
+    "sentiment": "positive",
+    "timestamp": "2026-02-01T11:50",
+    "sentiment_score": 2,
+    "risk_level": "LOW",
+    "keywords_found": ["OTP", "reminder", "safety"]
+  }
+]
