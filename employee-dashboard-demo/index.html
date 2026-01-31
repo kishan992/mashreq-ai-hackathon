@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection Portal - Employee View</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Mobile Overlay -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <div class="logo">
+                        <div class="logo-inner"></div>
+                    </div>
+                    <span class="bank-name">Horizon Bank</span>
+                </div>
+                <button id="closeSidebar" class="close-sidebar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <nav class="nav">
+                <div class="nav-item active">
+                    <i class="fas fa-th"></i>
+                    <span>Dashboard</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-credit-card"></i>
+                    <span>Accounts</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-bell"></i>
+                    <span>Alerts</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </div>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <button id="menuButton" class="menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 class="header-title">
+                    <span class="desktop-title">Fraud Detection Portal - Employee View</span>
+                    <span class="mobile-title">FD Portal</span>
+                </h1>
+            </div>
+            <div class="header-right">
+                <i class="fas fa-bell icon-button"></i>
+                <div class="user-menu">
+                    <i class="fas fa-user"></i>
+                    <i class="fas fa-chevron-down desktop-only"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+            <h2 class="dashboard-title">Dashboard</h2>
+
+            <!-- Review with AI Banner -->
+            <div class="ai-banner">
+                <h3>Review with AI</h3>
+                <p>Intelligent fraud detection powered by advanced algorithms</p>
+            </div>
+
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab active" data-tab="checking">Checking</button>
+                <button class="tab" data-tab="savings">Savings</button>
+                <button class="tab" data-tab="cards">Credit Cards</button>
+                <button class="tab" data-tab="loans">Loans</button>
+                <button class="tab" data-tab="wire">Wire Transfers</button>
+            </div>
+
+            <!-- AI Flagged Transactions -->
+            <div class="transactions-card">
+                <div class="card-header">
+                    <h3 id="transactionsTitle">AI Flagged Transactions (Today)</h3>
+                    <div class="date-picker-container">
+                        <i class="fas fa-calendar"></i>
+                        <input type="date" id="datePicker" class="date-picker">
+                    </div>
+                </div>
+                
+                <!-- Desktop Table -->
+                <div id="desktopTable" class="desktop-table">
+                    <table id="transactionsTable">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Account Name</th>
+                                <th>Transaction ID</th>
+                                <th>Amount</th>
+                                <th>Risk Score</th>
+                                <th>Flag Reason</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <!-- Populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Mobile Card View -->
+                <div id="mobileCards" class="mobile-cards">
+                    <!-- Populated by JavaScript -->
+                </div>
+
+                <!-- Empty State -->
+                <div id="emptyState" class="empty-state" style="display: none;">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <p class="empty-title">No flagged transactions found</p>
+                    <p class="empty-subtitle">Try selecting a different date or account type</p>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="btn btn-danger">Block Transaction</button>
+                    <button class="btn btn-primary">Override Flag</button>
+                    <button class="btn btn-dark">Delete Alert</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- AI Assistant -->
+    <div id="aiAssistant" class="ai-assistant">
+        <!-- Chat Window -->
+        <div id="chatWindow" class="chat-window" style="display: none;">
+            <div class="chat-header">
+                <div class="chat-header-left">
+                    <div class="chat-avatar">🤖</div>
+                    <div>
+                        <h4>AI Assistant</h4>
+                        <p>Always here to help</p>
+                    </div>
+                </div>
+                <button id="closeChatButton" class="close-chat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div id="chatMessages" class="chat-messages">
+                <div class="welcome-message">
+                    <div class="welcome-emoji">👋</div>
+                    <p>Hi! I'm your AI assistant.</p>
+                    <p class="welcome-subtitle">Ask me anything about fraud detection!</p>
+                </div>
+            </div>
+            
+            <div class="chat-input-container">
+                <input type="text" id="chatInput" placeholder="Ask me anything..." class="chat-input">
+                <button id="sendButton" class="send-button">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- AI Button -->
+        <button id="aiButton" class="ai-button">
+            🤖
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
