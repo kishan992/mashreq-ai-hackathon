@@ -51,7 +51,77 @@ const icons = {
     x: '<svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>'
 };
 
-// Counter Logic
+// NEW: Array to store dismissed issues
+let dismissedIssues = [];
+
+// NEW: Function to download JSON file
+function downloadJSON(data, filename) {
+    const jsonStr = JSON.stringify(data, null, 2);
+    const blob = new Blob([jsonStr], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+}
+
+// NEW: Function to download CSV file
+function downloadCSV(data, filename) {
+    const headers = ['ID', 'Type', 'Title', 'Risk Level', 'Confidence Score', 'Source', 'Details', 'Dismissed At'];
+    const rows = data.map(issue => [
+        issue.id,
+        issue.typeLabel,
+        `"${issue.title}"`,
+        issue.riskLabel,
+        issue.confidenceScore,
+        `"${issue.source}"`,
+        `"${issue.details}"`,
+        issue.dismissedAt
+    ]);
+    const csvContent = [
+        headers.join(','),
+        ...rows.map(row => row.join(','))
+    ].join('\n');
+    const blob = new Blob([csvContent], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+}
+
+// NEW: Function to download TXT file
+function downloadTXT(data, filename) {
+    const txtContent = data.map(issue => 
+        `======================================
+ID: ${issue.id}
+Type: ${issue.typeLabel}
+Title: ${issue.title}
+Risk Level: ${issue.riskLabel}
+Confidence Score: ${issue.confidenceScore}%
+Source: ${issue.source}
+Details: ${issue.details}
+Dismissed At: ${issue.dismissedAt}
+======================================\n`
+    ).join('\n');
+    const blob = new Blob([txtContent], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+}
+
+// NEW: Counter Logic
 function updateCounters() {
     document.getElementById('count-pending').innerText = mockIssues.length;
     document.getElementById('count-high').innerText = mockIssues.filter(i => i.riskLevel === 'high').length;
@@ -145,6 +215,84 @@ function closeModal() {
     document.getElementById('actionModal').classList.remove('active');
 }
 
+// ========== NEW: SAVE TO FILE FUNCTIONS ==========
+
+// Function to download JSON file
+function downloadJSON(data, filename) {
+    const jsonStr = JSON.stringify(data, null, 2);
+    const blob = new Blob([jsonStr], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+}
+
+// Function to download CSV file
+function downloadCSV(data, filename) {
+    // CSV Headers
+    const headers = ['ID', 'Type', 'Title', 'Risk Level', 'Confidence Score', 'Source', 'Details', 'Dismissed At'];
+    
+    // Convert data to CSV rows
+    const rows = data.map(issue => [
+        issue.id,
+        issue.typeLabel,
+        `"${issue.title}"`, // Wrap in quotes to handle commas
+        issue.riskLabel,
+        issue.confidenceScore,
+        `"${issue.source}"`,
+        `"${issue.details}"`,
+        issue.dismissedAt
+    ]);
+    
+    // Combine headers and rows
+    const csvContent = [
+        headers.join(','),
+        ...rows.map(row => row.join(','))
+    ].join('\n');
+    
+    const blob = new Blob([csvContent], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+}
+
+// Function to download TXT file
+function downloadTXT(data, filename) {
+    const txtContent = data.map(issue => 
+        `======================================
+ID: ${issue.id}
+Type: ${issue.typeLabel}
+Title: ${issue.title}
+Risk Level: ${issue.riskLabel}
+Confidence Score: ${issue.confidenceScore}%
+Source: ${issue.source}
+Details: ${issue.details}
+Dismissed At: ${issue.dismissedAt}
+======================================\n`
+    ).join('\n');
+    
+    const blob = new Blob([txtContent], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+}
+
+// ========== END OF FILE SAVE FUNCTIONS ==========
+
 // Confirm Button Handler (Removes the card AND updates counters)
 document.getElementById('confirmBtn').addEventListener('click', () => {
     closeModal();
@@ -153,10 +301,28 @@ document.getElementById('confirmBtn').addEventListener('click', () => {
     const card = document.getElementById(`card-${currentIssueId}`);
     
     if (card) {
-        // 2. Animate Removal
+        // NEW: 2. Find the issue in the array before removing it
+        const dismissedIssue = mockIssues.find(i => i.id === currentIssueId);
+        
+        // NEW: 3. If this is a dismiss action, save to dismissed array
+        if (currentAction === 'Dismiss' && dismissedIssue) {
+            // Add timestamp and action
+            dismissedIssue.dismissedAt = new Date().toISOString();
+            dismissedIssue.action = currentAction;
+            
+            // Add to dismissed issues array
+            dismissedIssues.push(dismissedIssue);
+            
+            // Auto-download the file (choose one format or uncomment all)
+            downloadJSON(dismissedIssues, 'dismissed_issues.json');
+            // downloadCSV(dismissedIssues, 'dismissed_issues.csv');
+            // downloadTXT(dismissedIssues, 'dismissed_issues.txt');
+        }
+        
+        // 4. Animate Removal
         card.classList.add('removing');
         
-        // 3. Remove from DOM and Array after animation
+        // 5. Remove from DOM and Array after animation
         setTimeout(() => {
             // Update the data array by filtering out the removed ID
             mockIssues = mockIssues.filter(i => i.id !== currentIssueId);
