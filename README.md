@@ -24,20 +24,20 @@ Our solution is divided into three strictly isolated security zones to ensure co
 * **Processing:** Local Inference Node (Simulating Llama 3.1 405B).
 * **Output:** Classifies signals into *Fraud*, *Service Incident*, *Brand Sentiment*, or *Misinformation*.
 
-![Zone 1 Architecture](AI%20Flowchart/zone1-pipeline.png)
+<img src="AI%20Flowchart/zone1-pipeline.png" width="600" alt="Zone 1 Architecture">
 
 ### 🔸 Zone 2: Governance & Compliance (The Guardrails)
 * **Logic:** The "Risk Scoring Engine" evaluates confidence levels.
 * **The Checkpoint:** High-risk alerts (>85% Confidence) trigger a **Decision Gate**.
 * **Dashboard:** Analysts review AI reasoning before approving execution.
 
-![Zone 2 Architecture](AI%20Flowchart/zone2-pipeline.png)
+<img src="AI%20Flowchart/zone2-pipeline.png" width="600" alt="Zone 2 Architecture">
 
 ### 🟢 Zone 3: Authorized Execution (The Action)
 * **Approved:** Once a human clicks "Approve," the system executes parallel responses.
 * **Actions:** Updates Chatbot Knowledge Base, Pushes App Notifications, and Generates Executive Briefings.
 
-![Zone 3 Architecture](AI%20Flowchart/zone3-pipeline.png)
+<img src="AI%20Flowchart/zone3-pipeline.png" width="600" alt="Zone 3 Architecture">
 
 ---
 
