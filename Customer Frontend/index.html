@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mashreq Neo | Future of Banking</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="logo">mashreq <span>NEO</span></a>
+        <div class="nav-links">
+            <a href="#">Accounts</a>
+            <a href="#">Cards</a>
+            <a href="#">Loans</a>
+            <a href="#">Transfers</a>
+            <a href="#">Investments</a>
+            <a href="#">Insurance</a>
+            <a href="#">Rewards</a>
+        </div>
+        <div class="nav-actions">
+            <button class="btn-outline-orange" id="navChatBtn">AI Support</button>
+            <div class="search-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+            <a href="#" class="btn-text">Sign In</a>
+            <button class="btn-primary">Become a Customer</button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-label">Bank With Us</span>
+                <h1>Your bank, now at your fingertips</h1>
+                <p>Experience the future of banking with Mashreq Neo. 100% digital, secure, and rewarding. Open an account in minutes.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary">Get Started</button>
+                    <button class="btn-outline-orange">Learn More</button>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="phone-mockup">
+                    <div class="phone-notch"></div>
+                    <div class="phone-screen">
+                        <div class="screen-header">
+                            <h4>Good Morning, Arsh</h4>
+                            <div style="font-size:0.8rem; color:#666; margin-top:4px;">Gold Member</div>
+                        </div>
+                        <div class="bank-card primary">
+                            <small>Current Account</small>
+                            <div class="balance">AED 45,230.50</div>
+                        </div>
+                        <div class="bank-card">
+                            <small>Savings</small>
+                            <div class="balance dark">AED 125,680.00</div>
+                        </div>
+                        <div class="bank-card">
+                            <small>Neo Rewards</small>
+                            <div class="balance" style="color:var(--primary-orange);">15,400 Pts</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="services-grid">
+            <div class="card highlight">
+                <h3>Mobile Banking</h3>
+                <p>Award-winning app designed for your lifestyle. Transfer money, pay bills, and track spending on the go.</p>
+                <a href="#" class="link-arrow">Download App &rarr;</a>
+            </div>
+            <div class="card">
+                <h3>Online Banking</h3>
+                <p>Comprehensive desktop dashboard for complex transactions, statement analysis, and wealth management.</p>
+                <a href="#" class="link-arrow">Login Web &rarr;</a>
+            </div>
+            <div class="card">
+                <h3>WhatsApp Banking</h3>
+                <p>Chat with us 24/7 on your favorite app. Check balances and recent transactions instantly.</p>
+                <a href="#" class="link-arrow">Connect Now &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>&copy; 2024 Mashreq Bank. All rights reserved. Regulated by the Central Bank of the UAE.</footer>
+
+    <div class="fab-chat" id="fabChatBtn" aria-label="Open AI Support"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg></div>
+
+    <div class="chat-overlay" id="chatOverlay">
+        <div class="chat-container">
+            <div class="chat-header">
+                <div class="chat-title">
+                    <h3>Mashreq AI Assistant</h3>
+                    <p>Smart banking support, 24/7</p>
+                </div>
+                <div style="display:flex; align-items:center;">
+                    <button class="agent-btn" id="agentBtn">🎧 Live Agent</button>
+                    <button class="close-chat" id="closeChatBtn">&times;</button>
+                </div>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    Hello! 👋 I'm your Mashreq AI Assistant.
+                    <br><br>
+                    I can help you with:
+                    <br>🛡️ <b>Fraud & Security</b>
+                    <br>📰 <b>Finance News</b>
+                    <br>🏦 <b>Banking Services</b>
+                    <br>🗣️ <b>Public Trust & Safety</b>
+                    <br><br>
+                    How can I assist you today?
+                </div>
+            </div>
+
+            <div class="typing-indicator" id="typingIndicator">AI is typing...</div>
+
+            <div class="chat-input-area">
+                <input type="text" class="chat-input" id="userInput" placeholder="Ask about scams, accounts, or news..." autocomplete="off">
+                <button class="send-btn" id="sendBtn"><svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
