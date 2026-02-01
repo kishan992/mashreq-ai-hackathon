@@ -74,7 +74,7 @@ Our solution is divided into three strictly isolated security zones to ensure co
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/kishan992/mashreq-ai-hackathon]
+git clone [https://github.com/kishan992/mashreq-ai-hackathon.git](https://github.com/kishan992/mashreq-ai-hackathon.git)
 cd mashreq-ai-hackathon
 
 *Created by Team Flowstate*
