@@ -9,10 +9,27 @@
 ---
 
 ## 📖 Executive Summary
-In the modern banking sector, misinformation travels faster than transactions. A single viral rumor or phishing campaign can destabilize brand trust in minutes.
 
-The **Social Signal Intelligence Engine** is an enterprise-grade, privacy-first system designed to **detect, govern, and respond** to social risks without compromising data security. Unlike standard sentiment tools, our architecture enforces a **Human-in-the-Loop Decision Gate**, ensuring that AI suggests actions but never executes sensitive protocols without analyst approval.
+In banking, panic travels faster than a transaction. A single unverified rumor or a viral sentiment shift—like "someone got my bank info"—can destabilize brand trust in minutes.
 
+The **Social Signal Intelligence Engine** is a digital immune system for Mashreq Bank. It is designed to proactively monitor, analyze, and govern social risks before they escalate.
+
+Unlike standard chatbots, this is a **Human-in-the-Loop Intelligence Layer** that empowers employees to detect threats without compromising user privacy.
+
+### 🚀 How It Works
+1.  **Detection & Ingestion:**
+    The system continuously scans global and local news, social media discussions, and online forums. It filters for high-risk keywords and detects negative sentiment shifts that could impact the bank's image.
+
+2.  **Privacy-First Risk Analysis:**
+    Upon detecting a signal, the AI generates a **Risk Analysis Report**. This document isolates the threat logic and source credibility but strictly excludes all **Personally Identifiable Information (PII)**. We track the *risk*, not the *customer*.
+
+3.  **Governance & Recommendation:**
+    The AI does not act alone. It provides **Actionable Recommendations** (e.g., "Update Knowledge Base," "Issue Fraud Warning") to a specialized **Employee Dashboard**.
+
+4.  **The Decision Gate:**
+    An authorized employee reviews the intelligence. Only after **human approval** is the risk report escalated to leadership or the response protocol activated.
+
+**Result:** A system that combats misinformation with speed, accuracy, and total compliance.
 ---
 
 ## 🏗️ System Architecture
