@@ -2,7 +2,7 @@
 ### *Responsible AI for Brand Resilience & Risk Governance*
 
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![Llama 3.1](https://img.shields.io/badge/Model-Llama_3.1_405B-purple?style=for-the-badge)](https://ai.meta.com/llama/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-yellow?style=for-the-badge&logo=javascript&logoColor=white)]()
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Hackathon_Submission-orange?style=for-the-badge)]()
 
