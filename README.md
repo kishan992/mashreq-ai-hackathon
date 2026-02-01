@@ -1,4 +1,4 @@
-# 🛡️ Mashreq Social Signal Intelligence Engine
+# 🛡️ Mashreq Social Signal Intelligence Engine (MSSIE)
 ### *Responsible AI for Brand Resilience & Risk Governance*
 
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
@@ -17,19 +17,20 @@ The **Social Signal Intelligence Engine** is a digital immune system for Mashreq
 Unlike standard chatbots, this is a **Human-in-the-Loop Intelligence Layer** that empowers employees to detect threats without compromising user privacy.
 
 ### 🚀 How It Works
+
 1.  **Detection & Ingestion:**
-    The system continuously scans global and local news, social media discussions, and online forums. It filters for high-risk keywords and detects negative sentiment shifts that could impact the bank's image.
+    The system is configured to monitor global networking sites, social media discussions, and online forums. It filters for high-risk keywords and detects negative sentiment shifts that could impact the bank's image.
 
 2.  **Privacy-First Risk Analysis:**
-    Upon detecting a signal, the AI generates a **Risk Analysis Report**. This document isolates the threat logic and source credibility but strictly excludes all **Personally Identifiable Information (PII)**. We track the *risk*, not the *customer*.
+    Upon detecting a signal, the AI categorizes the risk based on its confidence rating and instantly notifies Mashreq employees via the **Employee Dashboard**. It also generates a periodic **Risk Summary Report** to track trends and actions. This document strictly excludes all **Personally Identifiable Information (PII)**. We track the *risk*, not the *customer*.
 
 3.  **Governance & Recommendation:**
-    The AI does not act alone. It provides **Actionable Recommendations** (e.g., "Update Knowledge Base," "Issue Fraud Warning") to a specialized **Employee Dashboard**.
+    The AI does not act alone. It provides the security team with **Actionable Recommendations** (e.g., "Approve," "Escalate," or "Dismiss"), which are directly accessible through the specialized dashboard interface.
 
 4.  **The Decision Gate:**
-    An authorized employee reviews the intelligence. Only after **human approval** is the risk report escalated to leadership or the response protocol activated.
+    An authorized employee reviews the intelligence. Only after **human approval** is the risk report escalated to leadership or the response protocol activated, notifying the customer as required.
 
-**Result:** A system that combats misinformation with speed, accuracy, and total compliance.
+**Result:** A system that combats misinformation with speed, accuracy, and total compliance, while keeping the customer experience smooth.
 ---
 
 ## 🏗️ System Architecture
