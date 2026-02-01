@@ -24,6 +24,25 @@ body {
 .logo-section p { font-size: 0.9rem; opacity: 0.9; margin-top: 0.25rem; }
 .badge { background-color: rgba(255, 255, 255, 0.25); padding: 0.35rem 0.85rem; border-radius: 20px; font-weight: 600; font-size: 0.8rem; }
 
+/* Archive Button */
+.archive-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s;
+}
+.archive-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
 /* CONTAINER */
 .container { max-width: 1400px; margin: 2rem auto; padding: 0 2rem; }
 

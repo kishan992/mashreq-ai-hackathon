@@ -51,7 +51,9 @@ const icons = {
     x: '<svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>'
 };
 
-// NEW: Array to store dismissed issues
+// NEW: Arrays to store issues by action type
+let approvedIssues = [];
+let investigateIssues = [];
 let dismissedIssues = [];
 
 // NEW: Function to download JSON file
@@ -115,6 +117,26 @@ Dismissed At: ${issue.dismissedAt}
     const link = document.createElement('a');
     link.href = url;
     link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+}
+
+// NEW: Function to download complete archive with all three categories
+function downloadArchive() {
+    const archive = {
+        Approved: approvedIssues,
+        Investigate: investigateIssues,
+        Dismissed: dismissedIssues
+    };
+    
+    const jsonStr = JSON.stringify(archive, null, 2);
+    const blob = new Blob([jsonStr], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'archive_log.json';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -302,21 +324,22 @@ document.getElementById('confirmBtn').addEventListener('click', () => {
     
     if (card) {
         // NEW: 2. Find the issue in the array before removing it
-        const dismissedIssue = mockIssues.find(i => i.id === currentIssueId);
+        const processedIssue = mockIssues.find(i => i.id === currentIssueId);
         
-        // NEW: 3. If this is a dismiss action, save to dismissed array
-        if (currentAction === 'Dismiss' && dismissedIssue) {
+        // NEW: 3. Store issue in appropriate array based on action
+        if (processedIssue) {
             // Add timestamp and action
-            dismissedIssue.dismissedAt = new Date().toISOString();
-            dismissedIssue.action = currentAction;
+            processedIssue.processedAt = new Date().toISOString();
+            processedIssue.action = currentAction;
             
-            // Add to dismissed issues array
-            dismissedIssues.push(dismissedIssue);
-            
-            // Auto-download the file (choose one format or uncomment all)
-            downloadJSON(dismissedIssues, 'dismissed_issues.json');
-            // downloadCSV(dismissedIssues, 'dismissed_issues.csv');
-            // downloadTXT(dismissedIssues, 'dismissed_issues.txt');
+            // Store in the correct array
+            if (currentAction === 'Approve') {
+                approvedIssues.push(processedIssue);
+            } else if (currentAction === 'Review') {
+                investigateIssues.push(processedIssue);
+            } else if (currentAction === 'Dismiss') {
+                dismissedIssues.push(processedIssue);
+            }
         }
         
         // 4. Animate Removal
