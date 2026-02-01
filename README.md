@@ -1,10 +1,10 @@
-# 🛡️ Mashreq Social Signal Intelligence Engine
+# 🛡️ Mashreq Social Signal Intelligence Engine (MSSIE)
 ### *Responsible AI for Brand Resilience & Risk Governance*
 
-[![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-yellow?style=for-the-badge&logo=javascript&logoColor=white)]()
-[![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=for-the-badge&logo=python&logoColor=white)]()
-[![HTML/CSS](https://img.shields.io/badge/Frontend-HTML5%20%2F%20CSS3-orange?style=for-the-badge)]()
-[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)]()
+[![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Llama 3.1](https://img.shields.io/badge/Model-Llama_3.1_405B-purple?style=for-the-badge)](https://ai.meta.com/llama/)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Hackathon_Submission-orange?style=for-the-badge)]()
 
 ---
 
@@ -16,9 +16,7 @@ The **Social Signal Intelligence Engine** is a digital immune system for Mashreq
 
 Unlike standard chatbots, this is a **Human-in-the-Loop Intelligence Layer** that empowers employees to detect threats without compromising user privacy.
 
----
-
-## 🚀 How It Works
+### 🚀 How It Works
 
 1.  **Detection & Ingestion:**
     The system is configured to monitor global networking sites, social media discussions, and online forums. It filters for high-risk keywords and detects negative sentiment shifts that could impact the bank's image.
@@ -33,7 +31,6 @@ Unlike standard chatbots, this is a **Human-in-the-Loop Intelligence Layer** tha
     An authorized employee reviews the intelligence. Only after **human approval** is the risk report escalated to leadership or the response protocol activated, notifying the customer as required.
 
 **Result:** A system that combats misinformation with speed, accuracy, and total compliance, while keeping the customer experience smooth.
-
 ---
 
 ## 🏗️ System Architecture
@@ -45,20 +42,20 @@ Our solution is divided into three strictly isolated security zones to ensure co
 * **Processing:** Local Inference Node (Simulating Llama 3.1 405B).
 * **Output:** Classifies signals into *Fraud*, *Service Incident*, *Brand Sentiment*, or *Misinformation*.
 
-<img src="AI%20Flowchart/zone1-pipeline.png" height="350" alt="Zone 1 Architecture">
+<img src="AI%20Flowchart/zone1-pipeline.png" width="600" alt="Zone 1 Architecture">
 
 ### 🔸 Zone 2: Governance & Compliance (The Guardrails)
 * **Logic:** The "Risk Scoring Engine" evaluates confidence levels.
 * **The Checkpoint:** High-risk alerts (>85% Confidence) trigger a **Decision Gate**.
 * **Dashboard:** Analysts review AI reasoning before approving execution.
 
-<img src="AI%20Flowchart/zone2-pipeline.png" height="350" alt="Zone 2 Architecture">
+<img src="AI%20Flowchart/zone2-pipeline.png" width="400" alt="Zone 2 Architecture">
 
 ### 🟢 Zone 3: Authorized Execution (The Action)
 * **Approved:** Once a human clicks "Approve," the system executes parallel responses.
-* **Actions:** Updates Knowledge Base, Pushes App Notifications, and Generates Executive Briefings.
+* **Actions:** Updates Chatbot Knowledge Base, Pushes App Notifications, and Generates Executive Briefings.
 
-<img src="AI%20Flowchart/zone3-pipeline.png" height="350" alt="Zone 3 Architecture">
+<img src="AI%20Flowchart/zone3-pipeline.png" width="600" alt="Zone 3 Architecture">
 
 ---
 
@@ -70,7 +67,6 @@ Our solution is divided into three strictly isolated security zones to ensure co
 | **Backend AI** | `Python` | Logic for Risk Classification & Confidence Scoring. |
 | **Data** | `JSON` | Synthetic dataset management (No live scraping). |
 | **Flow** | `Mermaid.js` | Architecture visualization and planning. |
-
 ---
 
 ## 📂 Repository Structure
@@ -84,7 +80,8 @@ Our solution is divided into three strictly isolated security zones to ensure co
 │   ├── /config             # Compliance settings & Thresholds
 │   ├── /models             # AI Inference Logic (Llama 3.1 wrappers)
 │   ├── /services           # Risk Manager & Action Executor
-│   └── pipeline_simulation.py  # MAIN SCRIPT: Runs the backend demo
+│   └── pipeline_simulation.py  # Simulation script
+│   └── gpt-neo-demo-model.py # Local demo
 │
 ├── /Customer Frontend      # Banking App Interface (HTML/CSS/JS)
 │   ├── index.html
@@ -96,3 +93,14 @@ Our solution is divided into three strictly isolated security zones to ensure co
 │
 ├── /synthetic-data         # JSON datasets (No live scraping used)
 └── README.md
+```
+
+## 🚀 Installation & Usage
+
+### 1. Clone the Repository
+```bash
+git clone [https://github.com/kishan992/mashreq-ai-hackathon.git](https://github.com/kishan992/mashreq-ai-hackathon.git)
+cd mashreq-ai-hackathon
+```
+
+*Created by Team Flowstate*
