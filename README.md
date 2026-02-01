@@ -111,10 +111,5 @@ Human Oversight: The "Zone 2" architecture guarantees that no high-risk action (
 git clone [https://github.com/kishan992/mashreq-ai-hackathon.git](https://github.com/kishan992/mashreq-ai-hackathon.git)
 cd mashreq-ai-hackathon
 ```
-👥 Team Members
-Adam Serhan - AI Engineer
-Arsh Khan - Fullstack Developer 
-Hashir Hameed - Frontend Developer
-Kishan Girish - Data Scientist
 
 *Created by Team Flowstate for Mashreq Bounty Challenge 2026*
