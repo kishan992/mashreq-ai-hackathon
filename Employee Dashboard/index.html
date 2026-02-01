@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mashreq - AI Social Signal Dashboard (Internal)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <h1>Mashreq Bank</h1>
+                <p>AI Social Signal Advisory Dashboard - Internal Use Only</p>
+            </div>
+            <div class="badge">STAFF ACCESS</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="dashboard-header">
+            <h2>📊 Live Social Signal Monitoring</h2>
+            <p>AI-generated insights from social media, call centers, and customer communications</p>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat-card">
+                <h3 id="count-pending">0</h3>
+                <p>Pending Issues</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="count-high">0</h3>
+                <p>High Risk Alerts</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="count-medium">0</h3>
+                <p>Medium Risk</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="count-low">0</h3>
+                <p>Low Priority</p>
+            </div>
+        </div>
+
+        <div class="filters">
+            <label for="filter-type"><strong>Issue Type:</strong></label>
+            <select id="filter-type" onchange="filterIssues()">
+                <option value="all">All Types</option>
+                <option value="fraud">Fraud Alerts</option>
+                <option value="service">Service Issues</option>
+            </select>
+
+            <label for="filter-risk"><strong>Risk Level:</strong></label>
+            <select id="filter-risk" onchange="filterIssues()">
+                <option value="all">All Levels</option>
+                <option value="high">High Risk</option>
+                <option value="medium">Medium Risk</option>
+                <option value="low">Low Risk</option>
+            </select>
+        </div>
+
+        <div class="issues-grid" id="issuesContainer">
+            <!-- Issues will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="actionModal">
+        <div class="modal">
+            <div class="modal-title" id="modalTitle">Confirm Action</div>
+            <div class="modal-body" id="modalBody">Are you sure you want to proceed?</div>
+            <div class="modal-actions">
+                <button class="btn-modal-cancel" onclick="closeModal()">Cancel</button>
+                <button class="btn-modal-confirm" id="confirmBtn">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Mashreq Bank Internal Dashboard | AI-Powered Social Signal Monitoring | Staff Use Only</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

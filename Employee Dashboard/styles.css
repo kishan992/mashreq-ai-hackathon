@@ -1,0 +1,121 @@
+/* ============================================
+   MASHREQ INTERNAL DASHBOARD STYLES
+   ============================================ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* REVERTED TO ORIGINAL BACKGROUND */
+    background: linear-gradient(135deg, #F2F0EB 0%, #FFFFFF 100%);
+    color: #333333;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* HEADER */
+.header {
+    background: linear-gradient(135deg, #FF6A13 0%, #ff8a3d 100%);
+    color: white;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 20px rgba(255, 106, 19, 0.2);
+}
+.header-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.logo-section h1 { font-size: 1.75rem; font-weight: 700; display: flex; align-items: center; gap: 0.75rem; }
+.logo-section p { font-size: 0.9rem; opacity: 0.9; margin-top: 0.25rem; }
+.badge { background-color: rgba(255, 255, 255, 0.25); padding: 0.35rem 0.85rem; border-radius: 20px; font-weight: 600; font-size: 0.8rem; }
+
+/* CONTAINER */
+.container { max-width: 1400px; margin: 2rem auto; padding: 0 2rem; }
+
+.dashboard-header {
+    background: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); border-left: 5px solid #FF6A13;
+}
+.dashboard-header h2 { color: #FF6A13; margin-bottom: 0.5rem; }
+
+/* STATS */
+.stats-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+.stat-card {
+    background: white; padding: 1.5rem; border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08); border-left: 4px solid #FF6A13;
+    transition: transform 0.2s;
+}
+.stat-card:hover { transform: translateY(-4px); }
+.stat-card h3 { font-size: 2.5rem; color: #FF6A13; font-weight: 700; line-height: 1; margin-bottom: 0.5rem; }
+
+/* FILTERS */
+.filters { background: white; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08); display: flex; gap: 1.5rem; align-items: center; }
+.filters select { padding: 0.65rem 1.25rem; border: 2px solid #F2F0EB; border-radius: 8px; cursor: pointer; }
+
+/* ISSUES GRID */
+.issues-grid { display: grid; gap: 1.5rem; }
+
+.issue-card {
+    background: white; border-radius: 12px; padding: 1.75rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08); border: 1px solid #F2F0EB;
+    transition: all 0.3s ease;
+}
+/* Animation for removal */
+.issue-card.removing { transform: scale(0.95); opacity: 0; margin-bottom: -100px; }
+
+.issue-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 2px solid #F2F0EB; }
+.issue-type-badge { padding: 0.5rem 1.1rem; border-radius: 25px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
+.issue-type-badge.fraud { background: #fff5f5; color: #c53030; border: 1px solid #feb2b2; }
+.issue-type-badge.service { background: #ebf8ff; color: #2c5282; border: 1px solid #bee3f8; }
+
+.risk-level { display: flex; align-items: center; gap: 0.5rem; font-weight: 600; }
+.risk-level.high { color: #c53030; }
+.risk-level.medium { color: #d68910; }
+.risk-level.low { color: #38a169; }
+
+.issue-title { font-size: 1.3rem; margin-bottom: 1rem; color: #2d3748; }
+.issue-meta { display: flex; gap: 2rem; margin-bottom: 1rem; font-size: 0.9rem; color: #718096; }
+.confidence-score { color: #FF6A13; font-weight: 700; }
+
+.why-matters { background: #fffaf0; padding: 1.25rem; border-radius: 8px; margin-bottom: 1.25rem; border-left: 4px solid #ed8936; }
+.why-matters ul { padding-left: 1.2rem; margin-top: 0.5rem; }
+.issue-details { background: #f7fafc; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; font-size: 0.95rem; border-left: 4px solid #cbd5e0; }
+
+/* ACTION BUTTONS */
+.action-buttons { display: flex; gap: 1rem; }
+.btn { flex: 1; padding: 0.8rem; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem; transition: all 0.2s; color: white; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+
+.btn-approve { background: #48bb78; }
+.btn-approve:hover { background: #38a169; }
+
+.btn-review { background: #667eea; }
+.btn-review:hover { background: #5a67d8; }
+
+/* UPDATED RED DISMISS BUTTON */
+.btn-dismiss { background: #e53e3e; } 
+.btn-dismiss:hover { background: #c53030; }
+
+.btn-icon { width: 18px; height: 18px; }
+
+/* MODAL STYLES */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px);
+    z-index: 2000; display: none; align-items: center; justify-content: center;
+}
+.modal-overlay.active { display: flex; }
+
+.modal {
+    background: white; width: 90%; max-width: 500px;
+    border-radius: 12px; padding: 2rem;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    animation: slideUp 0.3s ease-out;
+}
+@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+.modal-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: #2d3748; }
+.modal-body { margin-bottom: 2rem; color: #4a5568; line-height: 1.6; }
+.modal-actions { display: flex; gap: 1rem; justify-content: flex-end; }
+
+.btn-modal-cancel { background: white; border: 1px solid #cbd5e0; color: #4a5568; padding: 0.75rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: 600; }
+.btn-modal-confirm { background: #FF6A13; border: none; color: white; padding: 0.75rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: 600; }
+
+.footer { text-align: center; padding: 2rem; color: #aaa; font-size: 0.9rem; }
+
+@media (max-width: 768px) { .action-buttons { flex-direction: column; } }
