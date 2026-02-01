@@ -10,7 +10,7 @@
 
 ## 📖 Executive Summary
 
-In banking, panic travels faster than a transaction. A single unverified rumor or a viral sentiment shift—like "someone got my bank info"—can destabilize brand trust in minutes.
+In banking, panic travels faster than a transaction. A single unverified rumor or a viral sentiment shift—like "someone got my bank info", can destabilize brand trust in minutes.
 
 The **Social Signal Intelligence Engine** is a digital immune system for Mashreq Bank. It is designed to proactively monitor, analyze, and govern social risks before they escalate.
 
