@@ -18,7 +18,7 @@
                 <p>AI Social Signal Advisory Dashboard - Internal Use Only</p>
             </div>
             <div style="display: flex; gap: 1rem; align-items: center;">
-                <button class="archive-btn" onclick="downloadArchive()">
+                <button class="archive-btn" id="archiveBtn">
                     <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="margin-right: 0.5rem;">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"></path>
                     </svg>
@@ -31,18 +31,18 @@
 
     <div class="container">
         <div class="dashboard-header">
-            <h2>📊 Live Social Signal Monitoring</h2>
-            <p>AI-generated insights from social media, call centers, and customer communications</p>
+            <h2>AI-Detected Social Signal Issues</h2>
+            <p>Review pending alerts detected from social media streams.</p>
         </div>
 
         <div class="stats-bar">
             <div class="stat-card">
                 <h3 id="count-pending">0</h3>
-                <p>Pending Issues</p>
+                <p>Pending Reviews</p>
             </div>
             <div class="stat-card">
                 <h3 id="count-high">0</h3>
-                <p>High Risk Alerts</p>
+                <p>High Risk</p>
             </div>
             <div class="stat-card">
                 <h3 id="count-medium">0</h3>
@@ -50,7 +50,7 @@
             </div>
             <div class="stat-card">
                 <h3 id="count-low">0</h3>
-                <p>Low Priority</p>
+                <p>Low Risk</p>
             </div>
         </div>
 

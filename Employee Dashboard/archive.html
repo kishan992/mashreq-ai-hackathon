@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive Log - Mashreq Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="archive-styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <h1>Mashreq Bank - Archive Log</h1>
+                <p>Historical record of all processed issues</p>
+            </div>
+            <button class="back-btn" onclick="window.close()">← Back to Dashboard</button>
+        </div>
+    </header>
+
+    <div class="archive-container">
+        <div class="section-header">
+            <div class="section-title">
+                📋 Complete Archive Log
+                <span class="count-badge" id="totalCount">0</span>
+            </div>
+            <button class="download-json-btn" onclick="downloadArchiveJSON()">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"></path>
+                </svg>
+                Download JSON
+            </button>
+        </div>
+
+        <!-- Approved Section -->
+        <div class="archive-section approved">
+            <h2>✅ Approved Issues (<span id="approvedCount">0</span>)</h2>
+            <div id="approvedContainer"></div>
+        </div>
+
+        <!-- Investigate Section -->
+        <div class="archive-section investigate">
+            <h2>🔍 Issues Under Investigation (<span id="investigateCount">0</span>)</h2>
+            <div id="investigateContainer"></div>
+        </div>
+
+        <!-- Dismissed Section -->
+        <div class="archive-section dismissed">
+            <h2>❌ Dismissed Issues (<span id="dismissedCount">0</span>)</h2>
+            <div id="dismissedContainer"></div>
+        </div>
+    </div>
+
+    <script src="archive-script.js"></script>
+</body>
+</html>

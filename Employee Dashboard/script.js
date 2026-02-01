@@ -123,7 +123,7 @@ Dismissed At: ${issue.dismissedAt}
     URL.revokeObjectURL(url);
 }
 
-// NEW: Function to download complete archive with all three categories
+// NEW: Function to open archive log in a new page
 function downloadArchive() {
     const archive = {
         Approved: approvedIssues,
@@ -131,16 +131,11 @@ function downloadArchive() {
         Dismissed: dismissedIssues
     };
     
-    const jsonStr = JSON.stringify(archive, null, 2);
-    const blob = new Blob([jsonStr], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'archive_log.json';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
+    // Store data in a global variable accessible by the new window
+    window.archiveData = archive;
+    
+    // Open archive page in new tab
+    window.open('archive.html', '_blank');
 }
 
 // NEW: Counter Logic
@@ -363,6 +358,12 @@ document.getElementById('confirmBtn').addEventListener('click', () => {
 // Close modal on outside click
 document.getElementById('actionModal').addEventListener('click', (e) => {
     if (e.target.id === 'actionModal') closeModal();
+});
+
+// Archive Log button handler
+document.getElementById('archiveBtn').addEventListener('click', (e) => {
+    e.preventDefault(); // Prevent any default behavior
+    downloadArchive();
 });
 
 window.onload = () => {
