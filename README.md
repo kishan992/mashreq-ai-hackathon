@@ -31,7 +31,7 @@ Our solution is divided into three strictly isolated security zones to ensure co
 * **The Checkpoint:** High-risk alerts (>85% Confidence) trigger a **Decision Gate**.
 * **Dashboard:** Analysts review AI reasoning before approving execution.
 
-<img src="AI%20Flowchart/zone2-pipeline.png" width="600" alt="Zone 2 Architecture">
+<img src="AI%20Flowchart/zone2-pipeline.png" width="500" height="300" alt="Zone 2 Architecture">
 
 ### 🟢 Zone 3: Authorized Execution (The Action)
 * **Approved:** Once a human clicks "Approve," the system executes parallel responses.
