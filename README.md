@@ -69,6 +69,15 @@ Our solution is divided into three strictly isolated security zones to ensure co
 | **Flow** | `Mermaid.js` | Architecture visualization and planning. |
 ---
 
+✅ Compliance & Responsible AI Statement
+This project adheres strictly to the Mashreq Hackathon Guidelines:
+
+No Live Scraping: We utilize a pre-generated synthetic-sentiment-data.json dataset to simulate social media traffic, respecting platform TOS.
+
+On-Premise Architecture: The system is designed to run local quantized models, ensuring zero data leakage to public APIs.
+
+Human Oversight: The "Zone 2" architecture guarantees that no high-risk action (e.g., sending alerts) occurs without explicit human verification.
+
 ## 📂 Repository Structure
 
 ```text
@@ -102,5 +111,10 @@ Our solution is divided into three strictly isolated security zones to ensure co
 git clone [https://github.com/kishan992/mashreq-ai-hackathon.git](https://github.com/kishan992/mashreq-ai-hackathon.git)
 cd mashreq-ai-hackathon
 ```
+👥 Team Members
+Adam Serhan - AI Engineer
+Arsh Khan - Fullstack Developer 
+Hashir Hameed - Frontend Developer
+Kishan Girish - Data Scientist
 
-*Created by Team Flowstate*
+*Created by Team Flowstate for Mashreq Bounty Challenge 2026*
