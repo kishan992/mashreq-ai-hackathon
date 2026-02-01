@@ -2,13 +2,15 @@ import json
 import warnings
 import logging
 from transformers import pipeline, logging as hf_logging
+import os
 
 # --- 1. CONFIGURATION ---
 warnings.filterwarnings("ignore")
 hf_logging.set_verbosity_error()
 logging.getLogger("transformers").setLevel(logging.ERROR)
 
-JSON_FILE = "fraud_signals_demo.json"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+JSON_FILE = os.path.join(BASE_DIR, "synthetic-data", "synthetic-sentiment-data.json")
 MODEL_NAME = "EleutherAI/gpt-neo-1.3B" 
 # On Mac M1/M2 use device="mps". On Windows use device=-1.
 
